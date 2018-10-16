@@ -23,7 +23,6 @@ public class Roles {
 
 	public Roles() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getR_id() {

@@ -38,7 +38,7 @@ public class Employees {
 	@JoinColumn(name = "EMP_ROLES")
 	Roles roles;
 	
-	public Employees(int id, String username, String password, String fname, String lname, String email, int f_id) {
+	public Employees(int id, String username, String password, String fname, String lname, String email, int r_id) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -46,12 +46,11 @@ public class Employees {
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
-		this.r_id = f_id;
+		this.r_id = r_id;
 	}
 
 	public Employees() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {
@@ -102,12 +101,12 @@ public class Employees {
 		this.email = email;
 	}
 
-	public int getF_id() {
+	public int getR_id() {
 		return r_id;
 	}
 
-	public void setF_id(int f_id) {
-		this.r_id = f_id;
+	public void setR_id(int r_id) {
+		this.r_id = r_id;
 	}
 
 	@Override

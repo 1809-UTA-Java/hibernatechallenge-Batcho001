@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +17,7 @@ import com.revature.models.Employees;
 import com.revature.repo.EmployeeDao;
 import com.revature.util.HibernateSession;
 
+//@WebServlet("/employees")
 @SuppressWarnings("serial")
 public class EmployeeServlet extends HttpServlet {
 	List<Employees> employees;
@@ -22,13 +25,15 @@ public class EmployeeServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		employees = dao.getEmployees();
-		resp.setContentType("text/xml");
-		ObjectMapper om = new XmlMapper();
-		String obj = om.writeValueAsString(employees);
-		PrintWriter pw = resp.getWriter();
-		pw.print(obj);
-		pw.close();
+//		employees = dao.getEmployees();
+//		resp.setContentType("text/xml");
+//		ObjectMapper om = new XmlMapper();
+//		String obj = om.writeValueAsString(employees);   
+//		PrintWriter pw = resp.getWriter();
+//		pw.print(obj);
+//		pw.close();
+		RequestDispatcher rd = req.getRequestDispatcher("index.html");
+		rd.forward(req, resp);
 	}
 	
 	@Override
